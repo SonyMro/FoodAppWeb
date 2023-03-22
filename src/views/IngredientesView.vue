@@ -44,6 +44,7 @@ const onFileChanged = (event: any) => {
       <v-row no-gutters>
         <v-col cols="12">
           <h1 class="text-center">Lista de ingredientes</h1>
+          <br />
         </v-col>
         <v-col cols="12">
           <v-btn color="secondary" @click="dialog = true">
@@ -54,24 +55,26 @@ const onFileChanged = (event: any) => {
 
         <v-col cols="12">
           <v-card style="width: 400px; height: 200px">
-    <v-row no-gutters>
-      <v-col cols="6">
-        <v-img src="https://via.placeholder.com/200x200" height="200"></v-img>
-      </v-col>
-      <v-col cols="6">
-        <v-card-title class="text-center">Titulo</v-card-title>
-        <v-card-text class="card-text overflow-hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit repellendus et, consectetur provident sequi eaque a saepe animi aut ducimus ullam, voluptatem quos laborum. Cum possimus commodi veritatis incidunt. Minus.</v-card-text>
-        <v-card-actions class="d-flex justify-center">
-          <v-btn icon color="primary">
-            <v-icon>mdi-pencil</v-icon>
-          </v-btn>
-          <v-btn icon color="error">
-            <v-icon>mdi-delete</v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-col>
-    </v-row>
-  </v-card>
+            <v-row no-gutters>
+              <v-col cols="6">
+                <v-img src="https://via.placeholder.com/200x200" height="200"></v-img>
+              </v-col>
+              <v-col cols="6">
+                <v-card-title class="text-center">Titulo</v-card-title>
+                <v-card-text class="card-text overflow-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                  repellendus et, consectetur provident sequi eaque a saepe animi aut ducimus ullam, voluptatem quos
+                  laborum. Cum possimus commodi veritatis incidunt. Minus.</v-card-text>
+                <v-card-actions class="d-flex justify-center">
+                  <v-btn icon color="primary">
+                    <v-icon>mdi-pencil</v-icon>
+                  </v-btn>
+                  <v-btn icon color="error">
+                    <v-icon>mdi-delete</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-col>
+            </v-row>
+          </v-card>
 
         </v-col>
 
@@ -105,16 +108,19 @@ const onFileChanged = (event: any) => {
 </template>
 <style>
 .card-text {
-  height: 75px; /* Altura máxima del texto */
+  height: 75px;
+  /* Altura máxima del texto */
+
+  overflow: scroll;
 }
 
-.overflow-hidden {
-  overflow: hidden; /* Ocultar el texto que se desborda */
-  text-overflow: ellipsis; /* Mostrar puntos suspensivos si el texto se desborda */
+.overflow-auto {
+  overflow-y: auto;
+  /* Agregar scroll vertical */
 }
+
 
 .v-btn {
-  margin: 0 5px; /* Espacio entre los botones */
-}
-
-</style>
+  margin: 0 5px;
+  /* Espacio entre los botones */
+}</style>
